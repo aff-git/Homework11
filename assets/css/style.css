@@ -11,15 +11,28 @@ body {
 
 /* end of template  */
 
+/* first nav */
+
 .gray {
     color: gray;
 }
 
+.navbar-nav > .nav-item > .nav-link {
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+/* end of first nav & beginning of second nav */
+
 .main-header > .nav {
     background: black;
-    width: 1000px;
-    
+    width: 100%; /* если не указать width в 1000 px, то чёрная полоса будет выезжать за границы картинки */
 }
+
 .main-header > .nav > .nav-item > .nav-link {
     color: gray;
     text-decoration: none;
@@ -34,176 +47,140 @@ body {
     color: white;
 }
 
-main > .container {
-    padding: 50px;
-}
+/* start of assignment */
 
-#grid-container {
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 300px 300px;
-    /* gap: 50px;
-    row-gap: 50px;
-    column-gap: 50px; */
-
-}
-
-#grid-container {
-    grid-area: container;
-    grid-template: 300px / 300px 300px 300px;
-    text-align: center;
-    gap: 50px;
-}
-
-#grid-first {
-    background-image: url('../img/handbag2.jpg');
+.grid-element-0 {
+    grid-area: zero;
+    background-image: url('../img/heroes.jpg');
+    width: 100%;
+    height: 500px;
     background-repeat: no-repeat;
-    text-align: center;
+    
 }
 
-#grid-second {
-    background-image: url('../img/watch1.jpg');
+.grid-element-1 {
+    grid-area: one;
+    width: 33%;
+    height: 300px;
+    background-image: url('../img/handbag1.jpg');
     background-repeat: no-repeat;
-    text-align: center;
-    /* gap: 30px; */
+    align-content: end;
 }
 
-#grid-third {
+.grid-element-2 {
+    grid-area: two;
+    width: 33%;
+    height: 300px;
+    background-image: url('../img/breitling.jpg');
+    background-repeat: no-repeat;
+    align-content: end;
+}
+
+.grid-element-3 {
+    grid-area: three;
+    width: 33%;
+    height: 300px;
     background-image: url('../img/shoes2.jpg');
     background-repeat: no-repeat;
-    text-align: center;
+    align-content: end;
+
 }
 
-.card-img-top {
-    width: 200px;
-    height: 300px;
-}
+/* end of assignment */
 
-
-.card {
-    width: 200px;
-    height: 550px;
-}
-
-footer {
-    grid-area: footer;
-    width: 100vw;
-    height: 30px;
-    z-index: 1;
-    padding: 50px;
-}
-
-
-.card-text {
-    color: darkred;
-}
-
-
-header {
-    grid-area: header;
-}
-
-main {
-    grid-area: main;
+.grid-container { 
     display: grid;
+    grid-template-areas: "zero zero zero"
+                         "one two three";
+    gap: 50px;
+    row-gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
-#afterwards {
-    display: flex;
-    grid-area: afterwards;
-    margin: 0 auto;
+.img-title:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.row {
+    gap: 20px;
+}
+
+.row > div > .img-title {
+    color: white;
+    font-size: 30px;
+}
+
+.row > div > .img-description {
+    color: black;
+}
+
+#container-1 {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto auto auto;
+}
+
+#container-2 {
+    display: grid;
+    padding: 20px;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+.d-flex {
     justify-content: center;
 }
 
-.container-fluid-lower {
-    grid-area: lower;
+.card-price {
+    color: brown;
+}
+
+.card-old-price {
+    padding-left: 10px;
+    color: gray;
+}
+
+.card-text:hover {
+    text-decoration: underline;
 }
 
 
-.container-upper {
-    grid-area: upper;
+/* low section */
+.low-list {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
 }
 
-#second-row {
-    grid-area: second;
+.sixth {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
 }
 
-.main-header {
-    width: 1000px;
-    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
-    z-index: 1;
+.sixth > div > ul > li {
+    color: gray;
+    padding: 5px 0;
+    margin: 5px 0;
+
+}
+
+.sixth > div > ul > li:hover {
+    color: black;
+    
+}
+
+.hours {
+    color: gray;
+    padding-bottom: 10px;
 }
 
 .copyright {
-    background-color: black;
+    width: 100%;
+    background: black;
     color: white;
-    width: auto;
-    margin: 0 auto;
-}
-
-.low-list {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    text-decoration: none;
-}
-
-
-.low-list > li {
-    color: gray;
-}
-
-.container-third {
-    display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    row-gap: 50px; /* not works */
-}
-
-#container-third > .row > .col > .card > .card-body > .card-title:hover {
-    color: gray;
-    text-decoration-line: underline;
-}
-
-#container-third > .row > .col > .card > .btn:hover {
-background: gray;
-}
-
-.third, .fourth {
-    row-gap: 50px; /* doesn't works */
-}
-
-.fifth {
-    text-align: center;
-}
-.sixth {
-    display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    text-align: left;
-
-}
-
-.text-wrap {
-    display: flex;
-    justify-content: center;
-}
-
-.card-text-strike {
-    padding-left: 20px;
-}
-
-
-/* Customizing cards */
-
-#first-row, #second-row {
-    row-gap: 50px ;
-}
-
-.g-col-4 > .img-title {
-    color: white;
-    font-size: 24px;
-
-}
-
-.g-col-4:hover > .img-title {
-    text-decoration: underline;
+    margin-top: 20px;
 }
